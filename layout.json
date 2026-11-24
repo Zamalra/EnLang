@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "lessons": {
+    "hello": {"x": 50, "gap": 5, "size": 19, "sprite": "./assets/lesson-active.svg" },
+    "name": {"x": 50, "gap": 4, "size": 19, "sprite": null},
+    "thanks": {"x": 50, "gap": 4, "size": 19, "sprite": null},
+    "goodbye": {"x": 50, "gap": 4, "size": 19, "sprite": null},
+    "recap": {"x": 50, "gap": 4, "size": 19, "sprite": null}
+  }
+}

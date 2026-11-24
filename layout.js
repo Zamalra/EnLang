@@ -1,0 +1,41 @@
+'use strict';
+
+const LessonLayout = (() => {
+  const limit = (value, fallback, min, max) =>
+    Number.isFinite(value) ? Math.min(max, Math.max(min, value)) : fallback;
+
+  function apply(row, layout, id) {
+    const spec = layout.lessons?.[id] ?? {};
+    row.style.setProperty('--x', limit(spec.x, 50, 0, 100) + '%');
+    row.style.setProperty('--gap', limit(spec.gap, 4, 1, 50) + 'cqi');
+    row.style.setProperty('--diameter', limit(spec.size, 19, 1, 100) + 'cqi');
+    return typeof spec.sprite === 'string' && spec.sprite.trim() ? spec.sprite : null;
+  }
+
+  function connect(path) {
+    path.querySelectorAll('.connector').forEach(line => line.remove());
+    const discs = [...path.querySelectorAll('.disc')];
+    if (!path.clientWidth) return;
+    const area = path.getBoundingClientRect();
+    let previous;
+    for (const disc of discs) {
+      const rect = disc.getBoundingClientRect();
+      const center = { x: rect.left + rect.width / 2 - area.left, y: rect.top + rect.height / 2 - area.top };
+      if (previous) {
+        const line = document.createElement('li');
+        line.className = 'connector';
+        line.setAttribute('aria-hidden', 'true');
+        const dx = center.x - previous.x;
+        const dy = center.y - previous.y;
+        line.style.left = previous.x + 'px';
+        line.style.top = previous.y + 'px';
+        line.style.width = Math.hypot(dx, dy) + 'px';
+        line.style.transform = 'rotate(' + Math.atan2(dy, dx) + 'rad)';
+        path.prepend(line);
+      }
+      previous = center;
+    }
+  }
+
+  return { apply, connect };
+})();
