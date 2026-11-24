@@ -77,3 +77,8 @@ dialog h2 { padding-right: 3rem; margin: .45rem 0 1.2rem; }
 #review-list, #history-list { display: grid; gap: .7rem; margin-top: 1rem; }
 .record { padding: .85rem 1rem; border-radius: .8rem; background: #e8f1e7; overflow-wrap: anywhere; }
 [hidden] { display: none !important; }
+.lesson .disc:has(.sprite) {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
