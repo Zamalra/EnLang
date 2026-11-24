@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="76" viewBox="0 0 250 76" role="img" aria-labelledby="title">
+  <title id="title">EnLang</title>
+  <rect width="250" height="76" fill="#263D30"/>
+  <g stroke="#F5F8F2" stroke-width="2" stroke-linejoin="round" fill="#F5F8F2">
+    <path fill="none" stroke="#86BD65" stroke-width="11" stroke-linecap="round" d="M35 16H13V50H35M13 33H31"/>
+    <path d="M48 23H56V27C59 24 62 22 67 22C76 22 80 28 80 37V55H71V38C71 33 69 30 64 30C60 30 57 33 57 38V55H48Z"/>
+    <path fill="none" stroke-width="11" stroke-linecap="round" d="M96 16V50H117"/>
+    <path fill-rule="evenodd" d="M152 23H160V55H152V51C149 54 146 56 141 56C132 56 126 49 126 39C126 29 132 22 141 22C146 22 149 24 152 27ZM143 30C138 30 135 34 135 39C135 45 138 48 143 48C148 48 152 45 152 39C152 34 148 30 143 30Z"/>
+    <path d="M170 23H178V27C181 24 184 22 189 22C198 22 202 28 202 37V55H193V38C193 33 191 30 186 30C182 30 179 33 179 38V55H170Z"/>
+    <path fill-rule="evenodd" d="M228 23H236V51C236 62 230 68 219 68C213 68 208 66 204 63L208 57C211 59 214 60 219 60C225 60 228 57 228 51V50C225 53 222 54 218 54C209 54 203 48 203 38C203 29 209 22 218 22C222 22 225 24 228 27ZM220 30C215 30 212 33 212 38C212 43 215 46 220 46C225 46 228 43 228 38C228 33 225 30 220 30Z" transform="translate(6 0)"/>
+  </g>
+</svg>

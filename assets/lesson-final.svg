@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" role="img" aria-labelledby="title">
+  <title id="title">유닛 최종 레슨</title>
+  <circle cx="36" cy="39" r="31" fill="#B96A23"/>
+  <circle cx="36" cy="33" r="31" fill="#F4A340"/>
+  <g transform="translate(22.8 19.8) scale(1.1)" fill="none" stroke="#493216" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 4h10v5a5 5 0 0 1-10 0zm0 2H3.5v1.5a4 4 0 0 0 4 4M17 6h3.5v1.5a4 4 0 0 1-4 4M12 14v4"/><rect x="8" y="18" width="8" height="3" rx="1"/>
+  </g>
+</svg>

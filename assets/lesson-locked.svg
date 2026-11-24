@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" role="img" aria-labelledby="title">
+  <title id="title">잠긴 레슨</title>
+  <circle cx="36" cy="39" r="31" fill="#454D53"/>
+  <circle cx="36" cy="33" r="31" fill="#626A70"/>
+  <g transform="translate(22.8 19.8) scale(1.1)" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="10" width="14" height="10.5" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2.5"/>
+  </g>
+</svg>
