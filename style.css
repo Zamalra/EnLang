@@ -70,11 +70,11 @@ dialog h2 { padding-right: 3rem; margin: .45rem 0 1.2rem; }
 .close { float: right; }
 #dialog-body { display: grid; gap: .65rem; clear: both; }
 #dialog-body p { margin: .25rem 0; line-height: 1.5; }
-.action, .option, .review-item { text-align: start; border: 1px solid var(--line); border-radius: .8rem; padding: .75rem 1rem; min-height: 44px; background: #fff; color: inherit; }
+.action, .option { text-align: start; border: 1px solid var(--line); border-radius: .8rem; padding: .75rem 1rem; min-height: 44px; background: #fff; color: inherit; }
 .action { background: var(--green); color: #fff; }
 .option[aria-pressed="true"] { border-color: var(--green); background: #e2f0df; }
 .action:disabled { opacity: .65; cursor: default; }
-#review-list, #history-list { display: grid; gap: .7rem; margin-top: 1rem; }
+#history-list { display: grid; gap: .7rem; margin-top: 1rem; }
 .record { padding: .85rem 1rem; border-radius: .8rem; background: #e8f1e7; overflow-wrap: anywhere; }
 [hidden] { display: none !important; }
 .lesson .disc:has(.sprite) {
@@ -97,7 +97,6 @@ dialog h2 { padding-right: 3rem; margin: .45rem 0 1.2rem; }
 .map-credit { font-size: .8rem; color: var(--muted); text-align: end; margin: .45rem 0 .8rem; }
 .map-credit a { color: inherit; }
 .adventure-detail { border: 1px solid var(--line); border-radius: 1rem; background: #f1f7ec; padding: .9rem 1rem; }
-.adventure-detail h2, .adventure-review { font-size: 1.15rem; margin: 0; }
+.adventure-detail h2 { font-size: 1.15rem; margin: 0; }
 .adventure-detail p { margin: .4rem 0; line-height: 1.5; }
 .adventure-detail .action { margin-top: .35rem; }
-.adventure-review { margin-top: 1.5rem; }

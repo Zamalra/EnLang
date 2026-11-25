@@ -151,9 +151,6 @@ function start({ unit, adventure = [] }, layout) {
     });
     LessonLayout.connect(path);
     renderAdventure(progress.completed.length);
-    find('review-list').replaceChildren(...(progress.completed.length
-      ? progress.completed.map(lesson => button(lesson.title, 'review-item', () => showLesson(lessons.indexOf(lesson))))
-      : [element('p', '', '레슨을 완료하면 여기에서 다시 풀 수 있어요.')]));
     find('history-list').replaceChildren(...(progress.completed.length
       ? [...progress.completed].sort((a, b) => progress.date(b.id).localeCompare(progress.date(a.id))).map(lesson =>
         element('div', 'record', lesson.title + ' · +' + lesson.xp + ' XP · ' + dateFormat.format(new Date(progress.date(lesson.id)))))
