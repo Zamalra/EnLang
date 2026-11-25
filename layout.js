@@ -4,7 +4,7 @@ const LessonLayout = (() => {
   const limit = (value, fallback, min, max) =>
     Number.isFinite(value) ? Math.min(max, Math.max(min, value)) : fallback;
 
-  function apply(row, layout, id) {
+  function apply(row, layout, id, state) {
     const spec = layout.lessons?.[id] ?? {};
     row.style.setProperty('--x', limit(spec.x, 50, 0, 100) + '%');
     row.style.setProperty('--gap', limit(spec.gap, 4, 1, 50) + 'cqi');
