@@ -97,7 +97,7 @@ function start({ unit }, layout) {
         row.append(control);
         path.append(row);
       }
-      const sprite = LessonLayout.apply(row, layout, lesson.id);
+      const sprite = LessonLayout.apply(row, layout, lesson.id, state);
       const control = row.firstElementChild;
       control.dataset.state = state;
       control.setAttribute('aria-label', lesson.title + ', ' + labels[state]);

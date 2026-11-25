@@ -9,7 +9,8 @@ const LessonLayout = (() => {
     row.style.setProperty('--x', limit(spec.x, 50, 0, 100) + '%');
     row.style.setProperty('--gap', limit(spec.gap, 4, 1, 50) + 'cqi');
     row.style.setProperty('--diameter', limit(spec.size, 19, 1, 100) + 'cqi');
-    return typeof spec.sprite === 'string' && spec.sprite.trim() ? spec.sprite : null;
+    const sprite = typeof spec.sprite === 'string' ? spec.sprite : spec.sprite?.[state];
+    return typeof sprite === 'string' && sprite.trim() ? sprite.trim() : null;
   }
 
   function connect(path) {
