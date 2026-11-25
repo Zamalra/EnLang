@@ -37,11 +37,21 @@
       "size": 19,
       "sprite": {
         "locked": "./assets/lesson-locked.svg",
-        "available": "./assets/lesson-grammer.svg",
+        "available": "./assets/lesson-grammar.svg",
         "complete": "./assets/lesson-complete.svg"
       }
     },
     "lesson-1-5": {
+      "x": 50,
+      "gap": 4,
+      "size": 19,
+      "sprite": {
+        "locked": "./assets/lesson-locked.svg",
+        "available": "./assets/lesson-active.svg",
+        "complete": "./assets/lesson-complete.svg"
+      }
+    },
+    "lesson-1-6": {
       "x": 50,
       "gap": 4,
       "size": 19,
