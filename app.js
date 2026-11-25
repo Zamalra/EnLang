@@ -78,33 +78,42 @@ function start({ unit, adventure = [] }, layout) {
   let selectedRegion = 0;
   const adventureMap = find('adventure-map');
   const regionPins = adventureMap ? adventure.map((region, index) => {
-    const pin = button(region.name, 'region-pin', () => {
+    const pin = button(undefined, 'region-pin', () => {
       selectedRegion = index;
-      renderAdventure(Learning.progress(lessons).completed.length);
+      renderAdventure();
     });
+    const lock = element('span', 'lock');
+    lock.setAttribute('aria-hidden', 'true');
+    pin.append(lock, element('span', 'region-name', region.name));
     pin.style.left = region.x + '%';
     pin.style.top = region.y + '%';
     adventureMap.append(pin);
     return pin;
   }) : [];
 
-  function renderAdventure(completedCount) {
+  function renderAdventure() {
     if (!regionPins.length) return;
-    find('adventure-progress').textContent =
-      Math.min(completedCount + 1, adventure.length) + ' / ' + adventure.length + ' 지역 해금';
+    const currentUnit = unit.number;
+    const openCount = adventure.filter(region => region.unit <= currentUnit).length;
+    find('adventure-progress').textContent = openCount + ' / ' + adventure.length + ' 구역 해금';
     regionPins.forEach((pin, index) => {
-      const locked = index > completedCount;
+      const region = adventure[index];
+      const locked = region.unit > currentUnit;
       pin.dataset.locked = String(locked);
-      pin.setAttribute('aria-label', adventure[index].name + (locked ? ', 잠김' : ', 탐험 가능'));
+      pin.setAttribute('aria-label', region.name + (locked ? ', 잠김' : ', 탐험 가능'));
       pin.setAttribute('aria-pressed', String(index === selectedRegion));
+      pin.firstElementChild.hidden = !locked;
+      pin.lastElementChild.hidden = locked;
+      const mask = adventureMap.querySelector('[data-zone-mask="' + region.unit + '"]');
+      if (mask) mask.style.display = locked ? '' : 'none';
     });
     const region = adventure[selectedRegion];
-    const remaining = selectedRegion - completedCount;
+    const locked = region.unit > currentUnit;
     find('region-title').textContent = region.name;
-    find('region-description').textContent = remaining > 0
-      ? '레슨을 ' + remaining + '개 더 완료하면 열려요.'
-      : region.description;
-    find('region-learn').hidden = remaining <= 0;
+    find('region-description').textContent = locked
+      ? '유닛 ' + region.unit + '에 도달하면 열려요.'
+      : region.places.join(' · ');
+    find('region-learn').hidden = !locked;
   }
 
   find('region-learn')?.addEventListener('click', () => {
@@ -150,7 +159,7 @@ function start({ unit, adventure = [] }, layout) {
       }
     });
     LessonLayout.connect(path);
-    renderAdventure(progress.completed.length);
+    renderAdventure();
     find('history-list').replaceChildren(...(progress.completed.length
       ? [...progress.completed].sort((a, b) => progress.date(b.id).localeCompare(progress.date(a.id))).map(lesson =>
         element('div', 'record', lesson.title + ' · +' + lesson.xp + ' XP · ' + dateFormat.format(new Date(progress.date(lesson.id)))))
@@ -177,7 +186,7 @@ function start({ unit, adventure = [] }, layout) {
 async function getData(name) {
   const embedded = find(name + '-data');
   if (embedded) return JSON.parse(embedded.textContent);
-  const response = await fetch('./' + name + '.json');
+  const response = await fetch('./' + name + '.json' + (name === 'content' ? '?v=jeju-zones' : ''));
   if (!response.ok) throw new Error(name);
   return response.json();
 }

@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f8faf6">
 <title>EnLang · 제주어 학습</title>
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./style.css?v=jeju-zones">
 <script defer src="./learning.js"></script>
 <script defer src="./layout.js"></script>
-<script defer src="./app.js"></script>
+<script defer src="./app.js?v=jeju-zones"></script>
 </head>
 <body>
 <div class="app">
@@ -22,12 +22,118 @@
     </section>
     <section id="review" aria-labelledby="adventure-title" hidden>
       <h1 id="adventure-title">제주 모험</h1>
-      <p class="adventure-intro">레슨을 완료할 때마다 새로운 지역이 열려요.</p>
+      <p class="adventure-intro">새 유닛에 도달할 때마다 지도에서 새 구역이 열려요.</p>
       <p id="adventure-progress" role="status"></p>
       <div id="adventure-map" class="adventure-map" role="group" aria-label="제주 지역 지도">
-        <img src="./assets/jeju-map.png" alt="" width="840" height="600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" aria-hidden="true" focusable="false">
+
+
+
+        <defs>
+          <path id="coast" d="M621.9,50.0 L639.2,61.0 L664.4,57.6 L667.2,72.5 L690.9,93.2 L703.8,88.1 L731.2,93.9 L743.3,120.4 L733.2,136.0 L740.2,150.9 L761.5,150.3 L765.0,162.6 L752.8,173.2 L736.3,223.2 L735.4,239.0 L720.9,243.6 L705.1,260.1 L700.8,280.0 L679.4,301.1 L683.6,309.4 L671.6,327.6 L647.0,335.4 L620.1,329.6 L590.4,360.5 L578.7,359.9 L542.5,370.0 L513.3,368.1 L497.4,374.4 L477.3,399.9 L458.5,405.8 L447.4,397.0 L413.4,404.2 L389.1,400.6 L378.7,412.0 L360.1,412.1 L343.8,420.1 L326.0,401.3 L308.8,410.0 L292.0,397.0 L267.0,410.5 L208.9,403.4 L189.0,419.8 L184.5,437.3 L165.7,450.8 L145.4,430.3 L130.6,407.3 L101.4,395.0 L85.6,381.0 L65.0,345.2 L70.9,337.9 L66.7,311.3 L72.2,287.1 L92.3,267.3 L112.8,254.9 L121.4,238.9 L134.2,233.7 L155.2,211.3 L155.3,192.3 L195.7,174.2 L198.4,158.3 L223.0,157.6 L267.9,133.1 L276.0,138.9 L352.6,111.4 L364.4,98.9 L383.6,104.4 L406.1,89.1 L414.2,99.8 L443.6,93.0 L457.7,81.6 L489.5,80.8 L499.2,61.3 L512.1,66.2 L565.5,61.7 L572.9,56.3 L599.9,59.0 L621.9,50.0Z"/>
+          <clipPath id="land"><path d="M621.9,50.0 L639.2,61.0 L664.4,57.6 L667.2,72.5 L690.9,93.2 L703.8,88.1 L731.2,93.9 L743.3,120.4 L733.2,136.0 L740.2,150.9 L761.5,150.3 L765.0,162.6 L752.8,173.2 L736.3,223.2 L735.4,239.0 L720.9,243.6 L705.1,260.1 L700.8,280.0 L679.4,301.1 L683.6,309.4 L671.6,327.6 L647.0,335.4 L620.1,329.6 L590.4,360.5 L578.7,359.9 L542.5,370.0 L513.3,368.1 L497.4,374.4 L477.3,399.9 L458.5,405.8 L447.4,397.0 L413.4,404.2 L389.1,400.6 L378.7,412.0 L360.1,412.1 L343.8,420.1 L326.0,401.3 L308.8,410.0 L292.0,397.0 L267.0,410.5 L208.9,403.4 L189.0,419.8 L184.5,437.3 L165.7,450.8 L145.4,430.3 L130.6,407.3 L101.4,395.0 L85.6,381.0 L65.0,345.2 L70.9,337.9 L66.7,311.3 L72.2,287.1 L92.3,267.3 L112.8,254.9 L121.4,238.9 L134.2,233.7 L155.2,211.3 L155.3,192.3 L195.7,174.2 L198.4,158.3 L223.0,157.6 L267.9,133.1 L276.0,138.9 L352.6,111.4 L364.4,98.9 L383.6,104.4 L406.1,89.1 L414.2,99.8 L443.6,93.0 L457.7,81.6 L489.5,80.8 L499.2,61.3 L512.1,66.2 L565.5,61.7 L572.9,56.3 L599.9,59.0 L621.9,50.0Z"/></clipPath>
+          <g id="pine">
+            <path fill="#A98162" d="M-2 0h4v-15h-4z"/>
+            <path fill="#4E9363" d="M-12-10q5-3 7-10l-4 1q6-7 9-15 3 8 9 15l-4-1q2 7 7 10Q0-6-12-10Z"/>
+            <path fill="#74AC68" d="M0-30q-3 10-8 18l8 2z"/>
+          </g>
+          <g id="orchard-tree">
+            <path fill="#997650" d="M-2 0h4v-12h-4z"/>
+            <path fill="#6AA05B" d="M-14-13q-4-8 4-11 3-9 11-6 9-2 12 6 7 3 2 12-7 7-20 3-6 1-9-4z"/>
+            <g fill="#F4A340"><circle cx="-7" cy="-19" r="2.8"/><circle cx="5" cy="-23" r="2.6"/><circle cx="9" cy="-15" r="2.6"/><circle cx="-1" cy="-13" r="2.5"/></g>
+          </g>
+          <g id="basalt">
+            <path fill="#657776" d="m-15 0-2-6 5-6 9-1 5 6-3 7zm17 0 1-8 8-4 8 3 2 9z"/>
+            <path fill="#879890" d="M-13-8l8-2 3 3-8 2zm19 1 6-3 5 3-8 2z"/>
+          </g>
+          <g id="grass" fill="none" stroke="#6FA16A" stroke-width="2.4" stroke-linecap="round">
+            <path d="M-5 0q0-4-4-7m9 7q0-5 2-10m3 10q2-5 6-6"/>
+          </g>
+        </defs>
+        <rect width="840" height="500" rx="30" fill="#E5F4FA"/>
+        <g fill="none" stroke="#B9DFEF" stroke-width="4" stroke-linecap="round">
+          <path d="M96 149q12-8 24 0t24 0m-35 14q12-8 24 0t24 0m517 229q12-8 24 0t24 0m-36 14q12-8 24 0t24 0"/>
+        </g>
+        <use href="#coast" transform="translate(0 11)" fill="#56966B" stroke="#56966B" stroke-width="5" stroke-linejoin="round"/>
+        <g clip-path="url(#land)" stroke="#FAFFF3" stroke-width="3" stroke-linejoin="round">
+          <path id="unit-1" fill="#C6E7AB" d="M180-8H600L473 188 342 215Z"/>
+          <path id="unit-2" fill="#A9D489" d="M180-8 342 215 350 314 231 500H0V-8Z"/>
+          <path id="unit-3" fill="#F6D68C" d="M231 500 350 314 492 285 715 500Z"/>
+          <path id="unit-4" fill="#9EDBD3" d="M600-8H840V500H715L492 285 473 188Z"/>
+          <path id="unit-5" fill="#7ABB78" d="M342 215 473 188 492 285 350 314Z"/>
+        </g>
+        <use href="#coast" fill="none" stroke="#39844C" stroke-width="4" stroke-linejoin="round"/>
+        <g clip-path="url(#land)">
+          <!-- Small clusters give each landscape its own setting. -->
+          <g transform="translate(422 120)">
+            <path d="M-36 17Q-5 9 22 17l14 8q-28 2-65-1z" fill="#E4F1D6"/>
+            <path fill="#F9E7BB" d="M-24 16V1l12-8L0 1v15zm27 0V-8l10-6 11 6v24z"/>
+            <path d="M-26 2l14-10L2 2M1-8l12-7 13 7" fill="none" stroke="#AC795D" stroke-width="2.7" stroke-linecap="round"/>
+            <path d="M-16 7h6m21-10h5m-5 7h5" stroke="#6C9C91" stroke-width="2.6" stroke-linecap="round"/>
+          </g>
+          <use href="#grass" transform="translate(322 165) scale(.8)"/>
+          <use href="#pine" transform="translate(290 245) scale(.8)"/>
+          <use href="#pine" transform="translate(309 254) scale(.58)"/>
+          <use href="#basalt" transform="translate(190 335) scale(.83)"/>
+          <use href="#basalt" transform="translate(222 337) scale(.8)"/>
+          <path d="M119 310q19-18 39-10m-29 18q15-10 27-7" fill="none" stroke="#8AB976" stroke-width="4" stroke-linecap="round"/>
+          <use href="#grass" transform="translate(259 321)"/>
+          <use href="#grass" transform="translate(269 272) scale(.7)"/>
+          <use href="#orchard-tree" transform="translate(372 365)"/>
+          <use href="#orchard-tree" transform="translate(399 357) scale(.86)"/>
+          <use href="#orchard-tree" transform="translate(414 385) scale(.76)"/>
+          <path d="M332 382q13 7 27 1m-9 10q14 5 26-1" fill="none" stroke="#D5AD63" stroke-width="3" stroke-linecap="round"/>
+          <g transform="translate(666 291)">
+            <path fill="#758784" d="M-42 12q11-3 20-13l8-9 27 1q5 15 24 20-38 5-79 1z"/>
+            <path fill="#7FB670" d="M-22-1l8-9 27 1 6 7q-20 3-41 1z"/>
+            <path d="M-8 2l-3 7m19-7 2 7" fill="none" stroke="#A4ACA0" stroke-width="2.3" stroke-linecap="round"/>
+          </g>
+          <use href="#basalt" transform="translate(693 220) scale(.65)"/>
+          <use href="#grass" transform="translate(575 258)"/>
+          <use href="#grass" transform="translate(555 191) scale(.8)"/>
+          <use href="#pine" transform="translate(367 277) scale(.52)"/>
+          <use href="#pine" transform="translate(467 263) scale(.61)"/>
+          <path d="M383 288q18 2 35-3t31-3" fill="none" stroke="#B5D99A" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <g stroke="#405E50" stroke-width="2.35" stroke-linecap="round" stroke-linejoin="round">
+          <!-- North: airplane -->
+          <path transform="translate(365 153) rotate(-20)" fill="#F5F8F2" d="M-29 3h18l-8-19h8L3 3h19q10 0 10 6t-10 6H3l-14 16h-8l8-16h-14l-9-8z"/>
+          <!-- West: thatched house -->
+          <g transform="translate(222 294)">
+            <path fill="#F5E4B8" d="M-28-1h56v24h-56z"/>
+            <path fill="#F4A340" d="M-36 0q9-23 36-23T36 0z"/>
+            <path fill="#9A6947" d="M-6 23V11q6-6 12 0v12"/>
+            <path d="M-37 23h74" fill="none"/>
+          </g>
+          <!-- South: tangerine -->
+          <g transform="translate(463 365)">
+            <path fill="#86BD65" d="M0-13Q0-33 23-30 23-15 0-13z"/>
+            <ellipse cy="3" rx="22" ry="19" fill="#F4A340"/>
+            <path d="M-12 0q1-7 7-8" fill="none" stroke="#FFE2A5"/>
+          </g>
+          <!-- East: haenyeo float and waves -->
+          <g transform="translate(629 197)">
+            <path d="M-27 17q9-6 18 0t18 0t18 0M-20 25q10-5 20 0t20 0" fill="none" stroke="#357DA7"/>
+            <path fill="#F4A340" d="M-18 8a18 16 0 1 1 36 0q-18 7-36 0z"/>
+            <path d="M-10-4q10-6 20 0M-6-18q6-9 12 0" fill="none"/>
+          </g>
+          <!-- Center: Hallasan and crater lake -->
+          <g transform="translate(417 250)">
+            <path fill="#39844C" d="M-36 20q9-3 19-18l8-13h18l8 13q10 15 19 18z"/>
+            <path fill="#C6E7AB" d="M-17 2l8-13h18l8 13-9-3-8 4-8-4z"/>
+            <ellipse cy="-11" rx="9" ry="3.5" fill="#88D3F0"/>
+          </g>
+        </g>
+
+        <g clip-path="url(#land)" fill="#DCE2DC" stroke="#FAFFF3" stroke-width="3" stroke-linejoin="round">
+          <path data-zone-mask="1" style="display:none" d="M180-8H600L473 188 342 215Z"/>
+          <path data-zone-mask="2" d="M180-8 342 215 350 314 231 500H0V-8Z"/>
+          <path data-zone-mask="3" d="M231 500 350 314 492 285 715 500Z"/>
+          <path data-zone-mask="4" d="M600-8H840V500H715L492 285 473 188Z"/>
+          <path data-zone-mask="5" d="M342 215 473 188 492 285 350 314Z"/>
+        </g>
+        </svg>
       </div>
-      <p class="map-credit">해안선 자료 · <a href="https://www.naturalearthdata.com/">Natural Earth</a></p>
       <div class="adventure-detail" aria-live="polite">
         <h2 id="region-title"></h2>
         <p id="region-description"></p>
