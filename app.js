@@ -28,7 +28,7 @@ function openDialog(title, ...children) {
   if (!dialog.open) dialog.showModal();
 }
 
-function start({ unit }, layout) {
+function start({ unit, adventure = [] }, layout) {
   const { lessons } = unit;
   find('unit').textContent = 'UNIT ' + unit.number;
   find('title').textContent = unit.title;
@@ -75,6 +75,42 @@ function start({ unit }, layout) {
     openDialog(lesson.title, prompt, ...options, check, feedback);
   }
 
+  let selectedRegion = 0;
+  const adventureMap = find('adventure-map');
+  const regionPins = adventureMap ? adventure.map((region, index) => {
+    const pin = button(region.name, 'region-pin', () => {
+      selectedRegion = index;
+      renderAdventure(Learning.progress(lessons).completed.length);
+    });
+    pin.style.left = region.x + '%';
+    pin.style.top = region.y + '%';
+    adventureMap.append(pin);
+    return pin;
+  }) : [];
+
+  function renderAdventure(completedCount) {
+    if (!regionPins.length) return;
+    find('adventure-progress').textContent =
+      Math.min(completedCount + 1, adventure.length) + ' / ' + adventure.length + ' 지역 해금';
+    regionPins.forEach((pin, index) => {
+      const locked = index > completedCount;
+      pin.dataset.locked = String(locked);
+      pin.setAttribute('aria-label', adventure[index].name + (locked ? ', 잠김' : ', 탐험 가능'));
+      pin.setAttribute('aria-pressed', String(index === selectedRegion));
+    });
+    const region = adventure[selectedRegion];
+    const remaining = selectedRegion - completedCount;
+    find('region-title').textContent = region.name;
+    find('region-description').textContent = remaining > 0
+      ? '레슨을 ' + remaining + '개 더 완료하면 열려요.'
+      : region.description;
+    find('region-learn').hidden = remaining <= 0;
+  }
+
+  find('region-learn')?.addEventListener('click', () => {
+    nav.find(control => control.dataset.page === 'learn').click();
+  });
+
   function render() {
     const progress = Learning.progress(lessons);
     find('xp').textContent = '⚡ ' + progress.xp + ' XP';
@@ -114,6 +150,7 @@ function start({ unit }, layout) {
       }
     });
     LessonLayout.connect(path);
+    renderAdventure(progress.completed.length);
     find('review-list').replaceChildren(...(progress.completed.length
       ? progress.completed.map(lesson => button(lesson.title, 'review-item', () => showLesson(lessons.indexOf(lesson))))
       : [element('p', '', '레슨을 완료하면 여기에서 다시 풀 수 있어요.')]));

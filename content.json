@@ -12,5 +12,14 @@
       {"id":"lesson-1-5","title":"첫인사 마무리","xp":10,"question":"‘만나서 반가워요’에 해당하는 표현은?","options":["Thank you!","Nice to meet you!","Goodbye!"],"answer":1},
       {"id":"lesson-1-6","title":"안부 묻기","xp":10,"question":"‘어떻게 지내세요?’에 해당하는 표현은?","options":["Nice to meet you!","How are you?","See you later!"],"answer":1}
     ]
-  }
+  },
+  "adventure": [
+    {"name": "제주", "x": 47.8, "y": 37.7, "description": "제주 북쪽의 첫 탐험지예요."},
+    {"name": "애월", "x": 26.8, "y": 40.0, "description": "제주 서북쪽의 바닷가 마을이에요."},
+    {"name": "한림", "x": 20.9, "y": 67.0, "description": "협재해변이 있는 서쪽 지역이에요."},
+    {"name": "서귀포", "x": 50.6, "y": 86.0, "description": "섬 남쪽에 자리한 바닷가 도시예요."},
+    {"name": "한라산", "x": 48.0, "y": 63.0, "description": "제주 한가운데 솟은 산이에요."},
+    {"name": "표선", "x": 77.4, "y": 69.0, "description": "제주 동남쪽의 해안 마을이에요."},
+    {"name": "성산", "x": 88.4, "y": 46.7, "description": "성산일출봉이 있는 제주 동쪽 지역이에요."}
+  ]
 }

@@ -20,7 +20,22 @@
       <ol id="path" class="path" aria-label="레슨 경로"></ol>
       <aside class="next"><span class="lock" aria-hidden="true"></span><div><span>다음 유닛</span><strong id="next"></strong><small id="next-status"></small></div></aside>
     </section>
-    <section id="review" hidden><h1>제주 모험</h1><div id="review-list"></div></section>
+    <section id="review" aria-labelledby="adventure-title" hidden>
+      <h1 id="adventure-title">제주 모험</h1>
+      <p class="adventure-intro">레슨을 완료할 때마다 새로운 지역이 열려요.</p>
+      <p id="adventure-progress" role="status"></p>
+      <div id="adventure-map" class="adventure-map" role="group" aria-label="제주 지역 지도">
+        <img src="./assets/jeju-map.png" alt="" width="840" height="600">
+      </div>
+      <p class="map-credit">해안선 자료 · <a href="https://www.naturalearthdata.com/">Natural Earth</a></p>
+      <div class="adventure-detail" aria-live="polite">
+        <h2 id="region-title"></h2>
+        <p id="region-description"></p>
+        <button id="region-learn" class="action" type="button" hidden>학습으로 가기</button>
+      </div>
+      <h2 class="adventure-review">레슨 복습</h2>
+      <div id="review-list"></div>
+    </section>
     <section id="history" hidden><h1>학습 기록</h1><div id="history-list"></div></section>
     <p id="error" role="alert" hidden></p>
   </main>
