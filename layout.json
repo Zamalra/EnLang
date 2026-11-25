@@ -37,7 +37,7 @@
       "size": 19,
       "sprite": {
         "locked": "./assets/lesson-locked.svg",
-        "available": "./assets/lesson-active.svg",
+        "available": "./assets/lesson-grammer.svg",
         "complete": "./assets/lesson-complete.svg"
       }
     },
