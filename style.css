@@ -47,7 +47,7 @@ progress::-moz-progress-bar { background: #3d8654; border-radius: 1rem; }
 .lesson[data-state="available"] .disc { background: #2e794a; color: #fff; border-color: #20633c; box-shadow: 0 4px 0 #1d5535; }
 .lesson[data-state="complete"] .disc { background: #d9edda; color: #20633c; border-color: #a8cdb0; }
 .lesson:hover .disc { filter: brightness(.95); }
-.sprite { width: 72%; height: 72%; object-fit: contain; }
+.sprite { width: 100%; height: 100%; object-fit: contain; }
 .lesson-label { max-width: 100%; overflow-wrap: anywhere; padding: .24rem .65rem; border-radius: .5rem; background: #e8f1e7; font-size: .875rem; font-weight: 750; }
 .lock { position: relative; display: inline-block; inline-size: 19px; block-size: 15px; margin-top: 6px; border: 2px solid currentColor; border-radius: 4px; flex: none; }
 .lock::before { content: ""; position: absolute; width: 9px; height: 8px; border: 2px solid currentColor; border-bottom: 0; border-radius: 8px 8px 0 0; left: 50%; bottom: 100%; transform: translateX(-50%); }
