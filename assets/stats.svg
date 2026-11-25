@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39844C" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="stats-title">
-  <title id="stats-title">학습 기록</title>
-  <path d="M4 19v-6h3v6zm6.5 0V5h3v14zm6.5 0V9h3v10z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">학습 기록</title>
+  <g stroke="#39844C" stroke-width="1.5" stroke-linejoin="round">
+    <rect x="3.25" y="14" width="4" height="6" rx="1" fill="none"/>
+    <rect x="10" y="9.5" width="4" height="10.5" rx="1" fill="none"/>
+    <rect x="16.75" y="4" width="4" height="16" rx="1" fill="none"/>
+  </g>
 </svg>

@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39844C" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="learn-title">
-  <title id="learn-title">학습 지도</title>
-  <path d="M3.5 5.5 9 4l6 2 5.5-1.5v14L15 20l-6-2-5.5 1.5zM9 4v14m6-12v14"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">학습</title>
+  <g stroke="#39844C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="none" d="M3 4.5c3.1-.8 6.2-.3 9 1.4 2.8-1.7 5.9-2.2 9-1.4v12.2c-3.1-.7-6.2-.2-9 1.5-2.8-1.7-5.9-2.2-9-1.5Z"/>
+    <path fill="none" d="M12 5.9v12.3"/>
+  </g>
 </svg>
